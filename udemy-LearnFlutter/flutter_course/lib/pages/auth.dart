@@ -6,7 +6,7 @@ class AuthPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Login'),
+        title: Text('Login'), 
       ),
       body: Center(
         child: RaisedButton(
