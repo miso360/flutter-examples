@@ -9,7 +9,7 @@ class ProductPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
-      onWillPop: (){
+      onWillPop: () {
         print('Back button pressed!');
         Navigator.pop(context, false);
         return Future.value(false);
@@ -29,14 +29,19 @@ class ProductPage extends StatelessWidget {
               Container(
                 padding: EdgeInsets.all(10.0),
                 child: RaisedButton(
-                  color: Theme.of(context).accentColor,
-                  child: Text('DELETE'),
-                  onPressed: () => Navigator.pop(context, true),
+                    color: Theme
+                        .of(context)
+                        .accentColor,
+                    child: Text('DELETE'),
+                    onPressed: () => {
+                    showDialog(builder: (BuildContext context) {
+                    return AlertDialog(title: Text('Are you sure?'), );
+                    });
+                }
                 ),
               ),
             ]),
       ),
     );
-
   }
 }
