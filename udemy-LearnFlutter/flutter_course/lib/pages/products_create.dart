@@ -16,20 +16,23 @@ class _ProductCreatePageState extends State<ProductCreatePage> {
   String _descriptionValue;
   double _priceValue;
 
+  Widget _buildTitleTextField(){
+    return TextField(
+      decoration: InputDecoration(labelText: 'Product Title'),
+      onChanged: (String value) {
+        setState(() {
+          _titleValue = value;
+        });
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.all(10.0),
       child: ListView(
         children: <Widget>[
-          TextField(
-            decoration: InputDecoration(labelText: 'Product Title'),
-            onChanged: (String value) {
-              setState(() {
-                _titleValue = value;
-              });
-            },
-          ),
           TextField(
             maxLines: 4,
             decoration: InputDecoration(labelText: 'Product Description'),
