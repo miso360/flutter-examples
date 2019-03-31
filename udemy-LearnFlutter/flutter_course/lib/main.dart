@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import './pages/auth.dart';
-import './pages/products_admin.dart';
-import './pages/products.dart';
 import './pages/product.dart';
+import './pages/products.dart';
+import './pages/products_admin.dart';
 
 main() {
 //  debugPaintSizeEnabled = true;
@@ -41,10 +40,12 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       //debugShowMaterialGrid: true,
       theme: ThemeData(
-          brightness: Brightness.light,
-          primarySwatch: Colors.deepOrange,
-          accentColor: Colors.deepPurple,
-          fontFamily: 'Oswald'),
+        brightness: Brightness.light,
+        primarySwatch: Colors.deepOrange,
+        accentColor: Colors.deepPurple,
+        buttonColor: Colors.deepPurple,
+        buttonTheme: ButtonThemeData()
+      ),
       //home: AuthPage(),
       routes: {
         '/': (BuildContext context) => AuthPage(),
