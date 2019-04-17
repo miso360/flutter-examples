@@ -17,7 +17,7 @@ class _ProductEditPageState extends State<ProductEditPage> {
   final Map<String, dynamic> _formData = {
     'title': null,
     'description': null,
-    'price':null,
+    'price': null,
     'image': 'assets/food.jpg'
   };
 
@@ -54,6 +54,8 @@ class _ProductEditPageState extends State<ProductEditPage> {
     return TextFormField(
         keyboardType: TextInputType.number,
         decoration: InputDecoration(labelText: 'Product Price'),
+        initialValue:
+            widget.product == null ? '' : widget.product['price'].toString(),
         validator: (String value) {
           if (value.isEmpty ||
               !RegExp(r'^(?:[1-9]\d*|0)?(?:[.,]\d+)?$').hasMatch(value)) {
