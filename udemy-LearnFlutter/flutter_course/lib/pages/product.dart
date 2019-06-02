@@ -34,6 +34,7 @@ class ProductPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print('### ProductPage build');
     return WillPopScope(
       onWillPop: () {
         print('Back button pressed!');

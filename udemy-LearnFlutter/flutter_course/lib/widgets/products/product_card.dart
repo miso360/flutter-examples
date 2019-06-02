@@ -47,6 +47,8 @@ class ProductCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print('ProductCard');
+
     return Card(
       child: Column(
         children: <Widget>[
