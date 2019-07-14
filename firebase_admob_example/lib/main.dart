@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_admob/firebase_admob.dart';
+import 'dart:io' show Platform;
 
 void main() => runApp(MyApp());
 
@@ -60,8 +61,16 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    String appId = 'ca-app-pub-2086468408318758~6245828748';
+    String appId = 'ca-app-pub-2086468408318758~6245828748';  //Real AdMob ID
+    String adUnitID = "";
+
     FirebaseAdMob.instance.initialize(appId: appId);
+
+    if (Platform.isAndroid) {
+      adUnitID = "ca-app-pub-3940256099942544/6300978111";
+    } else if (Platform.isIOS) {
+      adUnitID = "ca-app-pub-3940256099942544/2934735716";
+    }
 
     MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo(
       keywords: <String>['flutterio', 'beautiful apps'],
@@ -75,7 +84,8 @@ class _MyHomePageState extends State<MyHomePage> {
       // Replace the testAdUnitId with an ad unit id from the AdMob dash.
       // https://developers.google.com/admob/android/test-ads
       // https://developers.google.com/admob/ios/test-ads
-      adUnitId: BannerAd.testAdUnitId,
+      //adUnitId: BannerAd.testAdUnitId,
+      adUnitId: adUnitID,
       size: AdSize.smartBanner,
       targetingInfo: targetingInfo,
       listener: (MobileAdEvent event) {
