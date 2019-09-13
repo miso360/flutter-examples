@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:youtube_play_list/MyDrawer.dart';
 
 void main() => runApp(new MyApp());
 
@@ -26,6 +27,7 @@ class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
+      drawer: new MyDrawer(),
       backgroundColor: Colors.transparent,
       appBar: new AppBar(
         backgroundColor: Colors.transparent,
