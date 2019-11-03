@@ -47,7 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: WebView(
-        initialUrl: 'https://flutter.dev',
+        initialUrl: 'https://flutter.dev/',
         javascriptMode: JavascriptMode.unrestricted,
         onPageFinished: (String url) {
           print('finished:' + url);
